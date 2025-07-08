@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Resume = () => {
-  const resumeUrl = "https://drive.google.com/file/d/1xjlfZb2o675bY6uANGGSB7S74W9XtMnU/view?usp=sharing";
+  const resumeUrl = "https://drive.google.com/file/d/1xjlfZb2o675bY6uANGGSB7S74W9XtMnU/view?usp=drive_link";
   const downloadUrl = "https://drive.google.com/uc?export=download&id=1xjlfZb2o675bY6uANGGSB7S74W9XtMnU";
 
   const handleViewResume = () => {
@@ -19,28 +19,28 @@ const Resume = () => {
     {
       category: "Technical Skills",
       items: [
-        "Python, R, SQL, JavaScript/TypeScript",
+        "Python, Java, C, TypeScript",
         "TensorFlow, PyTorch, Scikit-learn, Keras",
-        "AWS, GCP, Docker, Kubernetes",
-        "FastAPI, Flask, React, Node.js"
+        "AWS, GCP, Docker, Terraform",
+        "React 18, Vite, Tailwind CSS"
       ]
     },
     {
       category: "Machine Learning",
       items: [
-        "Deep Learning & Neural Networks",
+        "End-to-end ML pipelines",
         "Computer Vision & NLP",
-        "MLOps & Model Deployment",
-        "Statistical Analysis & Feature Engineering"
+        "Predictive Analytics",
+        "Model Deployment & Optimization"
       ]
     },
     {
       category: "Key Achievements",
       items: [
-        "15+ ML models deployed to production",
-        "Improved model accuracy by 25%",
-        "Led team of 5 engineers",
-        "Published 3 research papers"
+        "28% accuracy boost in AI detection",
+        "60% deployment time reduction",
+        "25% patient engagement increase",
+        "AWS Cloud Intern at Eduskills"
       ]
     }
   ];
@@ -87,9 +87,13 @@ const Resume = () => {
               <div className="bg-muted/50 rounded-lg p-8 min-h-[400px] flex items-center justify-center">
                 <div className="text-center space-y-4">
                   <FileText className="h-16 w-16 text-muted-foreground mx-auto" />
-                  <p className="text-muted-foreground">
-                    Resume preview will be available when the PDF is publicly accessible
-                  </p>
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-semibold text-foreground">Aditya Sharma</h3>
+                    <p className="text-muted-foreground">Machine Learning Developer</p>
+                    <p className="text-sm text-muted-foreground max-w-md">
+                      B.Tech CSE (AI & ML) • SRM IST • AWS Cloud Intern • ML Pipeline Expert
+                    </p>
+                  </div>
                   <div className="flex gap-4 justify-center">
                     <Button variant="outline" onClick={handleViewResume}>
                       View Full Resume

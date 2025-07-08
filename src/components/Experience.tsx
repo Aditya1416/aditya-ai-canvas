@@ -7,87 +7,86 @@ const Experience = () => {
   const experiences = [
     {
       type: 'work',
-      title: 'Senior ML Engineer',
-      company: 'Tech Innovations Ltd.',
+      title: 'AWS Cloud Intern',
+      company: 'Eduskills',
       location: 'Remote',
-      period: '2023 - Present',
-      description: 'Leading ML initiatives and developing scalable AI solutions for enterprise clients.',
+      period: 'Jan 2024 - Mar 2024',
+      description: 'Gained hands-on experience with AWS cloud services and infrastructure automation.',
       achievements: [
-        'Developed end-to-end ML pipelines serving 1M+ users',
-        'Improved model accuracy by 25% through advanced feature engineering',
-        'Led team of 5 engineers on computer vision projects'
+        'Implemented Kubernetes clusters on AWS using Terraform',
+        'Reduced deployment time by 60%',
+        'Achieved 15% reduction in infrastructure costs'
       ],
-      technologies: ['Python', 'TensorFlow', 'AWS', 'Docker', 'Kubernetes']
-    },
-    {
-      type: 'work',
-      title: 'ML Developer',
-      company: 'AI Dynamics',
-      location: 'San Francisco, CA',
-      period: '2022 - 2023',
-      description: 'Built and deployed machine learning models for healthcare and fintech applications.',
-      achievements: [
-        'Deployed 15+ ML models to production environments',
-        'Reduced inference time by 40% through model optimization',
-        'Implemented MLOps best practices across the organization'
-      ],
-      technologies: ['PyTorch', 'FastAPI', 'PostgreSQL', 'Redis', 'GCP']
+      technologies: ['AWS', 'Kubernetes', 'Terraform', 'Docker', 'Cloud Computing']
     }
   ];
 
   const education = [
     {
-      degree: 'Master of Science in Computer Science',
-      institution: 'University of Technology',
-      location: 'California, USA',
-      period: '2020 - 2022',
-      gpa: '3.8/4.0',
-      focus: 'Machine Learning & Artificial Intelligence',
+      degree: 'Bachelor of Technology in Computer Science & Engineering (AI & ML)',
+      institution: 'SRM Institute of Science and Technology',
+      location: 'Kattankulathur, Tamil Nadu',
+      period: '2022 - 2026',
+      gpa: '7.46/10.0',
+      focus: 'Artificial Intelligence & Machine Learning',
       achievements: [
-        'Thesis on Deep Learning for Medical Image Analysis',
-        'Teaching Assistant for AI/ML courses',
-        'President of AI Research Club'
+        'Specialization in AI and Machine Learning',
+        'Active member of coding clubs and technical societies',
+        'Participated in multiple hackathons and coding competitions'
       ]
     },
     {
-      degree: 'Bachelor of Technology in Computer Engineering',
-      institution: 'Institute of Engineering',
+      degree: 'Higher Secondary Education (Class XII)',
+      institution: "St. Patrick's School",
       location: 'India',
-      period: '2016 - 2020',
-      gpa: '3.7/4.0',
-      focus: 'Software Engineering & Data Structures',
+      period: '2020 - 2022',
+      gpa: '71.8%',
+      focus: 'Science Stream',
       achievements: [
-        'Graduated Magna Cum Laude',
-        'Winner of Annual Hackathon 2019',
-        'Published 3 research papers in AI conferences'
+        'Science stream with focus on Mathematics and Physics',
+        'Participated in various academic competitions',
+        'Active in extracurricular activities'
+      ]
+    },
+    {
+      degree: 'Secondary Education (Class X)',
+      institution: "St. Patrick's School",
+      location: 'India',
+      period: '2018 - 2020',
+      gpa: '91.6%',
+      focus: 'General Studies',
+      achievements: [
+        'Achieved distinction with 91.6% marks',
+        'Strong foundation in Mathematics and Science',
+        'Consistent academic performance'
       ]
     }
   ];
 
   const certifications = [
     {
-      name: 'AWS Certified Machine Learning - Specialty',
-      issuer: 'Amazon Web Services',
+      name: 'AWS Cloud & ML Foundations',
+      issuer: 'AWS Academy',
+      date: '2024',
+      credentialId: 'AWS-ACAD-2024'
+    },
+    {
+      name: 'Generative AI Specialization',
+      issuer: 'Google Cloud',
+      date: '2024',
+      credentialId: 'GCP-GenAI-2024'
+    },
+    {
+      name: 'Natural Language Processing Course',
+      issuer: 'Great Learning',
       date: '2023',
-      credentialId: 'AWS-MLS-2023-001'
+      credentialId: 'GL-NLP-2023'
     },
     {
-      name: 'TensorFlow Professional Developer Certificate',
-      issuer: 'Google',
-      date: '2022',
-      credentialId: 'TF-PRO-2022-456'
-    },
-    {
-      name: 'Deep Learning Specialization',
-      issuer: 'Coursera (deeplearning.ai)',
-      date: '2021',
-      credentialId: 'DL-SPEC-2021-789'
-    },
-    {
-      name: 'Kubernetes Administrator (CKA)',
-      issuer: 'Cloud Native Computing Foundation',
+      name: 'RDBMS Essentials',
+      issuer: 'IBM',
       date: '2023',
-      credentialId: 'CKA-2023-012'
+      credentialId: 'IBM-RDBMS-2023'
     }
   ];
 
@@ -97,7 +96,7 @@ const Experience = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Experience & Education</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            My professional journey and academic background in technology and machine learning
+            My academic journey and professional experience in technology and machine learning
           </p>
         </div>
 
@@ -178,13 +177,13 @@ const Experience = () => {
                         <Calendar className="h-4 w-4" />
                         {edu.period}
                       </div>
-                      <span>GPA: {edu.gpa}</span>
+                      <span>Score: {edu.gpa}</span>
                     </div>
                     <p className="text-muted-foreground mt-2">Focus: {edu.focus}</p>
                   </CardHeader>
                   <CardContent>
                     <div>
-                      <h4 className="font-semibold text-foreground mb-2">Achievements:</h4>
+                      <h4 className="font-semibold text-foreground mb-2">Highlights:</h4>
                       <ul className="space-y-1">
                         {edu.achievements.map((achievement, i) => (
                           <li key={i} className="text-muted-foreground text-sm flex items-start gap-2">

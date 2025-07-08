@@ -9,37 +9,62 @@ import { fetchGitHubRepos, type GitHubRepo } from '@/services/github';
 const Projects = () => {
   const [repos, setRepos] = useState<GitHubRepo[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [featuredProjects] = useState([
-    'HealthAI',
-    'Poacher-Detection',
-    'Smart-Trading-Bot',
-    'ML-Pipeline',
-    'Computer-Vision-Project'
-  ]);
+
+  // Your actual projects data
+  const featuredProjects = [
+    {
+      name: 'Poacher-Detection',
+      description: 'AI system to detect poachers in wildlife reserves using computer vision. Boosted detection accuracy by 28% through advanced deep learning techniques.',
+      technologies: ['OpenCV', 'TensorFlow', 'Keras', 'Python', 'Computer Vision'],
+      github: 'https://github.com/Aditya1416/Poacher-Detection',
+      highlights: ['28% accuracy improvement', 'Real-time detection', 'Wildlife conservation']
+    },
+    {
+      name: 'Patient Health Management System',
+      description: 'AI-powered platform for predictive healthcare analytics with comprehensive patient management features. Increased patient engagement by 25%.',
+      technologies: ['TensorFlow', 'PyTorch', 'OpenAI API', 'Flask', 'PostgreSQL'],
+      github: 'https://github.com/Aditya1416',
+      highlights: ['25% engagement increase', 'Predictive analytics', 'Healthcare AI']
+    },
+    {
+      name: 'NyayaBot',
+      description: 'Legal NLP assistant for Indian laws including IPC, CrPC, CPC. Provides intelligent legal guidance and document analysis.',
+      technologies: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'NLP'],
+      github: 'https://github.com/Aditya1416',
+      highlights: ['Legal AI assistant', 'Indian law expertise', 'Document analysis']
+    },
+    {
+      name: 'ExpenseTrackerAI',
+      description: 'AI-driven expense tracker with smart analytics and insights. Features intelligent categorization and financial planning.',
+      technologies: ['React 18', 'Recharts', 'Papa Parse', 'Tailwind CSS', 'AI Analytics'],
+      github: 'https://github.com/Aditya1416',
+      highlights: ['Smart categorization', 'Financial insights', 'AI-powered analytics']
+    }
+  ];
 
   useEffect(() => {
     const loadRepos = async () => {
       try {
         const repoData = await fetchGitHubRepos();
-        // Filter for featured projects or most starred
-        const featured = repoData
-          .filter(repo => featuredProjects.some(name => 
-            repo.name.toLowerCase().includes(name.toLowerCase())
-          ))
-          .slice(0, 6);
+        // Try to match with featured projects or use top repos
+        const featured = repoData.filter(repo => 
+          featuredProjects.some(project => 
+            repo.name.toLowerCase().includes(project.name.toLowerCase())
+          )
+        );
         
-        // If no featured projects found, use most starred repos
-        if (featured.length === 0) {
+        if (featured.length > 0) {
+          setRepos(featured);
+        } else {
+          // Use top starred repos as fallback
           setRepos(repoData
             .sort((a, b) => b.stargazers_count - a.stargazers_count)
-            .slice(0, 6)
+            .slice(0, 4)
           );
-        } else {
-          setRepos(featured);
         }
       } catch (error) {
         console.error('Failed to fetch repositories:', error);
-        // Fallback to static projects
+        // Use static project data as fallback
         setRepos([]);
       } finally {
         setIsLoading(false);
@@ -55,6 +80,18 @@ const Projects = () => {
       month: 'short'
     });
   };
+
+  const displayProjects = repos.length > 0 ? repos : featuredProjects.map((project, index) => ({
+    id: index,
+    name: project.name,
+    description: project.description,
+    html_url: project.github,
+    stargazers_count: 0,
+    language: project.technologies[0],
+    topics: project.technologies.slice(1, 4),
+    updated_at: new Date().toISOString(),
+    homepage: null
+  }));
 
   if (isLoading) {
     return (
@@ -77,71 +114,94 @@ const Projects = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Projects</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A showcase of my recent work in machine learning and software development
+            A showcase of my machine learning and software development projects
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {repos.map((repo) => (
-            <Card key={repo.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-card border-border">
-              <CardHeader>
-                <div className="flex items-start justify-between">
-                  <CardTitle className="text-xl text-foreground line-clamp-1">{repo.name}</CardTitle>
-                  <div className="flex items-center gap-1 text-muted-foreground text-sm">
-                    <Star className="h-4 w-4" />
-                    {repo.stargazers_count}
-                  </div>
-                </div>
-                <CardDescription className="text-muted-foreground leading-relaxed line-clamp-3">
-                  {repo.description || "No description available"}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="flex flex-wrap gap-2">
-                    {repo.language && (
-                      <Badge variant="secondary" className="text-xs">
-                        {repo.language}
-                      </Badge>
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {displayProjects.map((project, index) => {
+            const featuredProject = featuredProjects.find(fp => 
+              project.name.toLowerCase().includes(fp.name.toLowerCase())
+            );
+            
+            return (
+              <Card key={project.id || index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-card border-border">
+                <CardHeader>
+                  <div className="flex items-start justify-between">
+                    <CardTitle className="text-xl text-foreground line-clamp-1">{project.name}</CardTitle>
+                    {project.stargazers_count !== undefined && (
+                      <div className="flex items-center gap-1 text-muted-foreground text-sm">
+                        <Star className="h-4 w-4" />
+                        {project.stargazers_count}
+                      </div>
                     )}
-                    {repo.topics.slice(0, 3).map((topic) => (
-                      <Badge key={topic} variant="outline" className="text-xs">
-                        {topic}
-                      </Badge>
-                    ))}
                   </div>
-                  
-                  <div className="flex items-center text-xs text-muted-foreground">
-                    <Calendar className="h-3 w-3 mr-1" />
-                    Updated {formatDate(repo.updated_at)}
-                  </div>
-                  
-                  <div className="flex gap-2">
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      className="flex items-center gap-2"
-                      onClick={() => window.open(repo.html_url, '_blank')}
-                    >
-                      <Github className="h-4 w-4" />
-                      Code
-                    </Button>
-                    {repo.homepage && (
+                  <CardDescription className="text-muted-foreground leading-relaxed">
+                    {project.description || "No description available"}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div className="flex flex-wrap gap-2">
+                      {project.language && (
+                        <Badge variant="secondary" className="text-xs">
+                          {project.language}
+                        </Badge>
+                      )}
+                      {project.topics?.slice(0, 3).map((topic) => (
+                        <Badge key={topic} variant="outline" className="text-xs">
+                          {topic}
+                        </Badge>
+                      ))}
+                    </div>
+                    
+                    {featuredProject && (
+                      <div className="space-y-2">
+                        <h4 className="font-semibold text-foreground text-sm">Key Highlights:</h4>
+                        <div className="flex flex-wrap gap-1">
+                          {featuredProject.highlights.map((highlight, i) => (
+                            <span key={i} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
+                              {highlight}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    
+                    {project.updated_at && (
+                      <div className="flex items-center text-xs text-muted-foreground">
+                        <Calendar className="h-3 w-3 mr-1" />
+                        Updated {formatDate(project.updated_at)}
+                      </div>
+                    )}
+                    
+                    <div className="flex gap-2">
                       <Button 
                         variant="outline" 
                         size="sm" 
                         className="flex items-center gap-2"
-                        onClick={() => window.open(repo.homepage, '_blank')}
+                        onClick={() => window.open(project.html_url, '_blank')}
                       >
-                        <ExternalLink className="h-4 w-4" />
-                        Live
+                        <Github className="h-4 w-4" />
+                        Code
                       </Button>
-                    )}
+                      {project.homepage && (
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          className="flex items-center gap-2"
+                          onClick={() => window.open(project.homepage, '_blank')}
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                          Live
+                        </Button>
+                      )}
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
         <div className="text-center mt-12">

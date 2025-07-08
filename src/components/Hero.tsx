@@ -27,15 +27,13 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted">
       <div className="container mx-auto px-6 text-center">
         <div className="animate-fade-in">
-          {gitHubUser?.avatar_url && (
-            <div className="mb-8">
-              <img
-                src={gitHubUser.avatar_url}
-                alt="Aditya Sharma"
-                className="w-32 h-32 rounded-full mx-auto shadow-lg border-4 border-primary/20"
-              />
-            </div>
-          )}
+          <div className="mb-8">
+            <img
+              src="/lovable-uploads/6f75cbc9-1458-4b81-99f5-8e5323e79a4c.png"
+              alt="Aditya Sharma"
+              className="w-32 h-32 rounded-full mx-auto shadow-lg border-4 border-primary/20 object-cover"
+            />
+          </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-4">
             Aditya Sharma
@@ -46,18 +44,14 @@ const Hero = () => {
           
           {gitHubUser && (
             <div className="flex flex-wrap justify-center gap-4 mb-6 text-sm text-muted-foreground">
-              {gitHubUser.location && (
-                <div className="flex items-center gap-1">
-                  <MapPin className="h-4 w-4" />
-                  {gitHubUser.location}
-                </div>
-              )}
-              {gitHubUser.company && (
-                <div className="flex items-center gap-1">
-                  <Building className="h-4 w-4" />
-                  {gitHubUser.company}
-                </div>
-              )}
+              <div className="flex items-center gap-1">
+                <MapPin className="h-4 w-4" />
+                SRM IST, Kattankulathur
+              </div>
+              <div className="flex items-center gap-1">
+                <Building className="h-4 w-4" />
+                B.Tech CSE (AI & ML)
+              </div>
               <div className="flex items-center gap-1">
                 <Github className="h-4 w-4" />
                 {gitHubUser.public_repos} repositories
@@ -65,8 +59,8 @@ const Hero = () => {
             </div>
           )}
           
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-            {gitHubUser?.bio || "ML Developer skilled in building end-to-end pipelines with Python, TensorFlow, PyTorch, and AWS. Passionate about scalable AI solutions."}
+          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed">
+            Machine Learning Developer with hands-on experience in end-to-end ML pipelines—data preprocessing, model building, deployment, and performance tuning. Proficient in Python, TensorFlow, PyTorch, Scikit-learn, and cloud platforms (AWS, GCP). Adept at developing scalable AI solutions for predictive analytics.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

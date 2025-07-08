@@ -13,18 +13,21 @@ const Skills = () => {
   const coreSkills = [
     { name: "Python", level: 95, icon: Code, color: "#3776ab" },
     { name: "Machine Learning", level: 90, icon: Brain, color: "#ff6b35" },
-    { name: "Cloud Platforms (AWS)", level: 85, icon: Cloud, color: "#ff9900" },
-    { name: "Deep Learning", level: 88, icon: Brain, color: "#4285f4" },
-    { name: "MLOps & Deployment", level: 82, icon: Zap, color: "#00d4aa" },
-    { name: "Database Systems", level: 80, icon: Database, color: "#336791" }
+    { name: "TensorFlow/PyTorch", level: 88, icon: Brain, color: "#ff9900" },
+    { name: "AWS Cloud", level: 85, icon: Cloud, color: "#ff9900" },
+    { name: "React/TypeScript", level: 82, icon: Code, color: "#61dafb" },
+    { name: "Data Analysis", level: 88, icon: Database, color: "#336791" }
   ];
 
-  const technologies = [
-    "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy",
-    "AWS", "Docker", "Kubernetes", "Git", "Linux",
-    "FastAPI", "Flask", "PostgreSQL", "MongoDB", "Redis",
-    "React", "TypeScript", "Node.js", "GraphQL", "REST APIs"
-  ];
+  const skillCategories = {
+    "Programming Languages": ["Python", "Java", "C", "TypeScript", "JavaScript"],
+    "ML/AI Tools": ["TensorFlow", "PyTorch", "Scikit-learn", "Keras", "OpenCV"],
+    "Data & Analytics": ["Pandas", "NumPy", "Matplotlib", "Recharts", "Papa Parse"],
+    "Cloud & DevOps": ["AWS", "GCP", "Docker", "Terraform", "Kubernetes"],
+    "Frontend Development": ["React 18", "TypeScript", "Tailwind CSS", "Vite"],
+    "Backend & Database": ["Flask", "Supabase", "PostgreSQL", "MySQL", "OpenAI API"],
+    "Development Tools": ["Git", "Docker", "Terraform", "VS Code", "Jupyter"]
+  };
 
   useEffect(() => {
     const loadLanguageStats = async () => {
@@ -34,6 +37,16 @@ const Skills = () => {
         setLanguageStats(stats);
       } catch (error) {
         console.error('Failed to fetch language stats:', error);
+        // Set fallback data based on your actual skills
+        setLanguageStats({
+          Python: 15,
+          JavaScript: 8,
+          TypeScript: 6,
+          Java: 4,
+          C: 3,
+          HTML: 3,
+          CSS: 2
+        });
       } finally {
         setIsLoading(false);
       }
@@ -63,7 +76,7 @@ const Skills = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Skills & Technologies</h2>
           <p className="text-lg text-muted-foreground">
-            My technical expertise and proficiency across various domains
+            My technical expertise across machine learning, cloud computing, and software development
           </p>
         </div>
 
@@ -121,7 +134,7 @@ const Skills = () => {
           </Card>
         </div>
 
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 mb-8">
           {/* GitHub Languages */}
           <Card className="border-border bg-card">
             <CardHeader>
@@ -154,24 +167,53 @@ const Skills = () => {
             </CardContent>
           </Card>
 
-          {/* Technologies */}
+          {/* Certifications Preview */}
           <Card className="border-border bg-card">
             <CardHeader>
-              <CardTitle className="text-2xl text-foreground">Technologies</CardTitle>
+              <CardTitle className="text-2xl text-foreground">Recent Certifications</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap gap-2">
-                {technologies.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
-                  >
-                    {tech}
-                  </span>
+              <div className="space-y-4">
+                {[
+                  "AWS Cloud & ML Foundations",
+                  "Generative AI Specialization (Google)",
+                  "NLP Course (Great Learning)",
+                  "RDBMS Essentials (IBM)"
+                ].map((cert, index) => (
+                  <div key={index} className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span className="text-sm text-foreground">{cert}</span>
+                  </div>
                 ))}
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* Technology Categories */}
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Technology Stack</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {Object.entries(skillCategories).map(([category, skills], index) => (
+              <Card key={index} className="border-border bg-card">
+                <CardHeader>
+                  <CardTitle className="text-lg text-foreground">{category}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {skills.map((skill, skillIndex) => (
+                      <span
+                        key={skillIndex}
+                        className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>

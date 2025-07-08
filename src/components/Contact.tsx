@@ -47,8 +47,14 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'aditya.sharma@email.com',
-      href: 'mailto:aditya.sharma@email.com'
+      value: 'as4008@srmist.edu.in',
+      href: 'mailto:as4008@srmist.edu.in'
+    },
+    {
+      icon: Phone,
+      label: 'Phone',
+      value: '+91 9832852877',
+      href: 'tel:+919832852877'
     },
     {
       icon: Linkedin,
@@ -65,7 +71,7 @@ const Contact = () => {
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Available for Remote Work',
+      value: 'SRM IST, Kattankulathur, Tamil Nadu',
       href: null
     }
   ];
@@ -76,7 +82,7 @@ const Contact = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Get In Touch</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Let's discuss opportunities, collaborations, or just connect over our shared passion for AI and machine learning.
+            Let's discuss opportunities, collaborations, or projects in machine learning and AI. I'm always excited to work on innovative solutions!
           </p>
         </div>
 
@@ -205,14 +211,14 @@ const Contact = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  I'm always open to discussing new opportunities, interesting projects, or potential collaborations. 
-                  Whether you have a project in mind or just want to connect, feel free to reach out!
+                  I'm currently pursuing my B.Tech in CSE (AI & ML) and actively looking for opportunities in machine learning, AI development, and software engineering. Let's connect and explore how we can work together!
                 </p>
                 <div className="space-y-2 text-sm text-muted-foreground">
-                  <p>✨ Available for freelance projects</p>
-                  <p>🚀 Open to full-time opportunities</p>
-                  <p>🤝 Interested in collaboration</p>
-                  <p>💬 Happy to provide mentorship</p>
+                  <p>🎓 Final year B.Tech student</p>
+                  <p>💼 Open to internships and full-time roles</p>
+                  <p>🤖 Passionate about ML and AI solutions</p>
+                  <p>☁️ AWS Cloud certified</p>
+                  <p>🤝 Available for collaboration</p>
                 </div>
               </CardContent>
             </Card>
