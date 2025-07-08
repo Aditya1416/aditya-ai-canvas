@@ -1,88 +1,73 @@
 
-import { GraduationCap, Award, Heart } from 'lucide-react';
+import { GraduationCap, Award } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">About Me</h2>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            I'm a passionate Machine Learning Developer with a strong background in building scalable AI solutions. 
-            My journey in tech combines academic excellence with practical experience in deploying ML models at scale.
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">About Me</h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            I'm a passionate Machine Learning Developer with hands-on experience in end-to-end ML pipelines—data preprocessing, 
+            model building, deployment, and performance tuning. Currently pursuing B.Tech in Computer Science & Engineering with 
+            specialization in AI & ML at SRM Institute of Science and Technology.
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-          <Card className="text-center border-slate-200 hover:shadow-lg transition-shadow">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+          <Card className="text-center border-border hover:shadow-lg transition-shadow">
             <CardHeader>
-              <div className="mx-auto w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                <GraduationCap className="h-8 w-8 text-blue-600" />
+              <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <GraduationCap className="h-8 w-8 text-primary" />
               </div>
-              <CardTitle className="text-xl text-slate-800">Education</CardTitle>
+              <CardTitle className="text-xl text-foreground">Education</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-3 text-slate-600">
+              <div className="space-y-4 text-muted-foreground">
                 <div>
-                  <p className="font-medium">M.S. Computer Science</p>
-                  <p className="text-sm">University of Technology</p>
-                  <p className="text-sm">2020-2022</p>
+                  <p className="font-medium text-foreground">B.Tech CSE (AI & ML)</p>
+                  <p className="text-sm">SRM Institute of Science and Technology</p>
+                  <p className="text-sm">2022-2026 • CGPA: 7.46/10.0</p>
                 </div>
                 <div>
-                  <p className="font-medium">B.Tech Computer Engineering</p>
-                  <p className="text-sm">Institute of Engineering</p>
-                  <p className="text-sm">2016-2020</p>
+                  <p className="font-medium text-foreground">Higher Secondary (XII)</p>
+                  <p className="text-sm">St. Patrick's School</p>
+                  <p className="text-sm">2020-2022 • 71.8%</p>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Secondary (X)</p>
+                  <p className="text-sm">St. Patrick's School</p>
+                  <p className="text-sm">2018-2020 • 91.6%</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="text-center border-slate-200 hover:shadow-lg transition-shadow">
+          <Card className="text-center border-border hover:shadow-lg transition-shadow">
             <CardHeader>
-              <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                <Award className="h-8 w-8 text-green-600" />
+              <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <Award className="h-8 w-8 text-primary" />
               </div>
-              <CardTitle className="text-xl text-slate-800">Certifications</CardTitle>
+              <CardTitle className="text-xl text-foreground">Certifications</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-3 text-slate-600">
+              <div className="space-y-4 text-muted-foreground">
                 <div>
-                  <p className="font-medium">AWS Certified ML Specialty</p>
-                  <p className="text-sm">Amazon Web Services</p>
+                  <p className="font-medium text-foreground">AWS Cloud & ML Foundations</p>
+                  <p className="text-sm">AWS Academy</p>
                 </div>
                 <div>
-                  <p className="font-medium">TensorFlow Developer</p>
-                  <p className="text-sm">Google</p>
+                  <p className="font-medium text-foreground">Generative AI Specialization</p>
+                  <p className="text-sm">Google Cloud</p>
                 </div>
                 <div>
-                  <p className="font-medium">Deep Learning Specialization</p>
-                  <p className="text-sm">Coursera</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="text-center border-slate-200 hover:shadow-lg transition-shadow">
-            <CardHeader>
-              <div className="mx-auto w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
-                <Heart className="h-8 w-8 text-red-600" />
-              </div>
-              <CardTitle className="text-xl text-slate-800">Volunteer Work</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3 text-slate-600">
-                <div>
-                  <p className="font-medium">AI for Good Initiative</p>
-                  <p className="text-sm">Teaching ML to underserved communities</p>
+                  <p className="font-medium text-foreground">Natural Language Processing</p>
+                  <p className="text-sm">Great Learning</p>
                 </div>
                 <div>
-                  <p className="font-medium">Open Source Contributor</p>
-                  <p className="text-sm">Contributing to ML libraries</p>
-                </div>
-                <div>
-                  <p className="font-medium">Tech Mentorship</p>
-                  <p className="text-sm">Guiding junior developers</p>
+                  <p className="font-medium text-foreground">RDBMS Essentials</p>
+                  <p className="text-sm">IBM</p>
                 </div>
               </div>
             </CardContent>
