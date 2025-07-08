@@ -1,73 +1,81 @@
-# Welcome to your Lovable project
+# 🧠 Aditya Sharma — AI/ML Developer Portfolio
 
-## Project info
+![Banner](https://img.shields.io/badge/Machine_Learning-Developer-blueviolet?style=for-the-badge)  
+**Welcome to my portfolio repository!** This website showcases my projects, experience, and skills in Machine Learning, Cloud, and Full-Stack Development. Built with modern web technologies, it's a reflection of my learning journey and aspirations.
 
-**URL**: https://lovable.dev/projects/bb628126-4cb5-4aa1-a409-29ceae7efe9b
+## 🚀 Live Site
 
-## How can I edit this code?
+🌐 [Visit Portfolio](https://aditya1416.github.io/aditya-ai-canvas)  
+📄 [Download Resume](https://drive.google.com/file/d/1KgtysY1Nxo3djyUGmwdKZsnl50VabvQf/view?usp=sharing)
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 💡 About Me
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/bb628126-4cb5-4aa1-a409-29ceae7efe9b) and start prompting.
+Hi! I’m **Aditya Sharma**, a Machine Learning Developer passionate about building scalable AI systems. I specialize in end-to-end ML pipelines—from data preprocessing to deployment—and enjoy leveraging cloud and open-source tools to solve real-world problems.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🧰 Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Frontend**: React 18 (TypeScript), Tailwind CSS, Vite  
+- **Visualization**: Recharts, Lucide React  
+- **Backend/Infra**: Flask, Supabase, AWS, GCP, Terraform  
+- **ML Frameworks**: TensorFlow, PyTorch, scikit-learn  
+- **Tools**: Git, Docker, Papa Parse, Postgres, MySQL
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 📂 Featured Projects
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### 🐘 Poacher Detection  
+AI-powered computer vision tool using TensorFlow and OpenCV to detect poachers in wildlife reserves.  
+➡️ [Repo Link](https://github.com/Aditya1416/Poacher-Detection)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 💊 Patient Health Management System  
+ML + Generative AI platform offering healthcare analytics, tailored remedies, and predictive insights.  
+➡️ Built with TensorFlow, PyTorch, OpenAI API, Flask
 
-# Step 3: Install the necessary dependencies.
-npm i
+### ⚖️ NyayaBot  
+Legal NLP assistant for Indian law. Provides easy-to-understand explanations of IPC, CrPC, CPC, and more.  
+➡️ Built using React + Supabase + Tailwind CSS
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### 💸 ExpenseTrackerAI  
+An AI-powered expense tracker with visual insights, category tracking, and CSV parsing.  
+➡️ Built using React 18, Papa Parse, Recharts
+
+---
+
+## 🧾 Certifications
+
+- **AWS Cloud Foundations** — AWS Academy  
+- **AWS Machine Learning Foundations** — AWS Academy  
+- **Generative AI Specialization** — Google Cloud  
+- **Relational Databases Essentials** — IBM  
+- **NLP Essentials** — Great Learning
+
+---
+
+## 📚 Education
+
+- 🎓 **B.Tech in CSE (AI & ML)** — SRM IST, CGPA: 7.46  
+- 🏫 **Class XII (ISC)** — St. Patrick’s School, 71.8%  
+- 🏫 **Class X (ICSE)** — St. Patrick’s School, 91.6%
+
+---
+
+## 📫 Contact
+
+- 📧 Email: [as4008@srmist.edu.in](mailto:as4008@srmist.edu.in)  
+- 🔗 LinkedIn: [aditya-sharma](https://www.linkedin.com/in/aditya-sharma-997034255)  
+- 🧑‍💻 GitHub: [Aditya1416](https://github.com/Aditya1416)
+
+---
+
+## 🛠️ Run Locally
+
+```bash
+git clone https://github.com/Aditya1416/aditya-ai-canvas.git
+cd aditya-ai-canvas
+npm install
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/bb628126-4cb5-4aa1-a409-29ceae7efe9b) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
