@@ -5,7 +5,7 @@
 
 ## 🚀 Live Site
 
-🌐 [Visit Portfolio](https://aditya1416.github.io/aditya-ai-canvas)  
+🌐 [Visit Portfolio] (https://aditya-ai-canvas-git-main-aditya1416s-projects.vercel.app?_vercel_share=vBl8NrRsOVC8He6oQXOW5fahD99rW2FC)
 📄 [Download Resume](https://drive.google.com/file/d/1KgtysY1Nxo3djyUGmwdKZsnl50VabvQf/view?usp=sharing)
 
 ---
